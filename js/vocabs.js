@@ -23,38 +23,25 @@ var data = [
 ];
 
 $(function () {
-	var vocabs=getVocabList();
-	//for each vocab..
+    $.getJSON("vocabconfig.json",function(vocabconfig) {
+     var vocabs = vocabconfig.vocabs;
+     //get data for each vocab..
 	$.each(vocabs, function(i, v) {
 		//get json from sissvoc and parse
-		console.log(v[1]);
 		$.getJSON(v[1],function(vocabjson) {
 			var terms = vocabjson.result.items;
 			var tabledata=[];
-			//parse the individual terms into tabledata
+			//parse the individual terms into tabledata one by one
 			$.each(terms, function(i, term){
-				var termURI = term._about;
-				var termDefinition = term.definition;
-				var termLabel= term.prefLabel._value;
-				var termdata ={
-				"value": "inactive",
-				"label": termLabel,
-				"description": termDefinition,
-				"exactMatch": "",
-				"uri": termURI
-				};
+                var termdata = parseTerm(term);
 				tabledata.push(termdata);
-				
-				console.log(termLabel);
-				console.log(termURI);
-				console.log(termDefinition); 
-			});
-			
+			});			
 		    
 			//create a new empty table for the vocabulary
 			var tableID = 'neiivocab'+i;
 			createTable(tableID,v[0]);
-			
+
+            
 			//pass tabledata to new table
 			var tableelem='#'+tableID;
 			$(tableelem).bootstrapTable({
@@ -63,17 +50,14 @@ $(function () {
 		});
 		
 	});
-	
-});
+    
+    //then create the vocab tables
+ 
+    
+}); //end getJSON 
+		
+}); //end function
 
-
-function getVocabList(sissvoc){
-	//hardcoded for now but could come from a config file
-	var vocabs = [["NEII Licensing","http://vocabs.ands.org.au/repository/api/lda/neii/neii-licencing/version-1/concept.json"],
-	["NEII Observed Property","http://vocabs.ands.org.au/repository/api/lda/neii/neii-observed-property/version-1/concept.json"]];
-	return vocabs;
-
-};
 
 
 //function to create a new vocab table with headers 
@@ -86,18 +70,18 @@ function createTable(tableID, tableTitle) {
     document.getElementById("vocab-div").appendChild(heading);
 	
     var tab = document.createElement("table");
-    tab.setAttribute("id", tabID);
-    tab.setAttribute("class", "table table-bordered");
+    tab.id=tabID;
+    tab.class="table table-bordered";
     document.getElementById("vocab-div").appendChild(tab);
     
     var th=document.createElement('thead');
     var thid=tabID+"-th";
-    th.setAttribute("id", thid);
+    th.id=thid;
     document.getElementById(tabID).appendChild(th);
 
-    var tr = document.createElement("TR");
+    var tr = document.createElement("tr");
     var trid = tabID+"-tr";
-    tr.setAttribute("id", trid);
+    tr.id=trid;
     document.getElementById(thid).appendChild(tr);
     
     var header = document.createElement("th");
@@ -121,3 +105,19 @@ function createTable(tableID, tableTitle) {
     document.getElementById(trid).appendChild(header);
     
 }
+
+function parseTerm(term){
+    //parse sissvoc json item into data structure for table
+    var termURI = term._about;
+    var termDefinition = term.definition;
+    var termLabel= term.prefLabel._value;
+    var termdata ={
+        "value": "inactive",
+        "label": termLabel,
+        "description": termDefinition,
+        "exactMatch": "",
+        "uri": termURI
+        };
+    return termdata
+};
+
