@@ -1,14 +1,14 @@
 {  
    "vocabs":[
-    ["Licensing","https://vocabs.ands.org.au/repository/api/lda/neii/neii-licencing/version-1/concept.json"],
-	["Observed Property","https://vocabs.ands.org.au/repository/api/lda/neii/neii-observed-property/version-1/concept.json"],
-    ["Site Status","https://vocabs.ands.org.au/repository/api/lda/neii/neii-site-status/version-1/concept.json"],
-    ["Network ID","https://vocabs.ands.org.au/repository/api/lda/neii/neii-network-id/version-1/concept.json"],
-    ["Data Provider","https://vocabs.ands.org.au/repository/api/lda/neii/neii-data-provider/version-1/concept.json"],
-    ["Environmental Theme","https://vocabs.ands.org.au/repository/api/lda/neii/neii-environmental-theme/version-1/concept.json"],
-    ["Observation Method","https://vocabs.ands.org.au/repository/api/lda/neii/neii-observation-method/version-1/concept.json"],
     ["Data Availability","https://vocabs.ands.org.au/repository/api/lda/neii/neii-data-availability/version-1/concept.json"],
+    ["Data Provider","https://vocabs.ands.org.au/repository/api/lda/neii/neii-data-provider/version-1/concept.json"],  
+    ["Environmental Theme","https://vocabs.ands.org.au/repository/api/lda/neii/neii-environmental-theme/version-1/concept.json"],
+    ["Licensing","https://vocabs.ands.org.au/repository/api/lda/neii/neii-licencing/version-1/concept.json"],  
+    ["Observation Method","https://vocabs.ands.org.au/repository/api/lda/neii/neii-observation-method/version-1/concept.json"],
+	["Observed Property","https://vocabs.ands.org.au/repository/api/lda/neii/neii-observed-property/version-1/concept.json"],
+    ["Network ID","https://vocabs.ands.org.au/repository/api/lda/neii/neii-network-id/version-1/concept.json"],
     ["Sampling Regime","https://vocabs.ands.org.au/repository/api/lda/neii/neii-sampling-regime/version-1/concept.json"],
+    ["Site Status","https://vocabs.ands.org.au/repository/api/lda/neii/neii-site-status/version-1/concept.json"],
     ["SRS Name (Spatial Reference Systems)","https://vocabs.ands.org.au/repository/api/lda/neii/neii-srs-name/version-1/concept.json"]
     ]
 }

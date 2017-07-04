@@ -27,6 +27,10 @@ $(function () {
      var vocabs = vocabconfig.vocabs;
      //get data for each vocab..
 	$.each(vocabs, function(i, v) {
+        //create a new empty table for the vocabulary
+        var tableID = 'neiivocab'+i;
+        createTable(tableID,v[0]);
+
 		//get json from sissvoc and parse
 		$.getJSON(v[1],function(vocabjson) {
 			var terms = vocabjson.result.items;
@@ -37,12 +41,7 @@ $(function () {
 				tabledata.push(termdata);
 			});			
 		    
-			//create a new empty table for the vocabulary
-			var tableID = 'neiivocab'+i;
-			createTable(tableID,v[0]);
-
-            
-			//pass tabledata to new table
+			//pass tabledata to appropriate table 
 			var tableelem='#'+tableID;
 			$(tableelem).bootstrapTable({
 				data: tabledata
@@ -50,9 +49,6 @@ $(function () {
 		});
 		
 	});
-    
-    //then create the vocab tables
- 
     
 }); //end getJSON 
 		
