@@ -88,6 +88,9 @@ function createTable(tableID, tableTitle) {
     var tab = document.createElement("table");
     tab.id=tabID;
     tab.class="table table-bordered";
+    //table ordered by label
+    tab.setAttribute("data-sort-name", "label");
+    tab.setAttribute("data-sort-order", "asc");
     document.getElementById("vocab-div").appendChild(tab);
     
     var th=document.createElement('thead');
@@ -102,7 +105,6 @@ function createTable(tableID, tableTitle) {
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "label");
-    header.innerHTML ="Label";
     document.getElementById(trid).appendChild(header);
     
     var header = document.createElement("th");
