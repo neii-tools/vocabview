@@ -29,30 +29,50 @@ $(function () {
 	$.each(vocabs, function(i, v) {
         //create a new empty table for the vocabulary
         var tableID = 'neiivocab'+i;
+        //initialise table
         createTable(tableID,v[0]);
+        var tableelem='#'+tableID;
+        var tabledata=[];
+        $(tableelem).bootstrapTable({
+				data: tabledata
+			});
+        
+        //get the terms for this table by parsing JSON via api
+        handleJSON(v[1],tableID,tabledata);
+		
+	});
+    
+}); //end vocabConfig getJSON 
 
-		//get json from sissvoc and parse
-		$.getJSON(v[1],function(vocabjson) {
+		
+}); //end function
+
+
+//iterative function to retrieve json, insert it into specified table, check for next json page
+function handleJSON(jsonurl,tableID,tabledata){
+    var urlToFetch=jsonurl;
+    $.getJSON(urlToFetch,function(vocabjson) {
 			var terms = vocabjson.result.items;
-			var tabledata=[];
-			//parse the individual terms into tabledata one by one
+			//parse the individual terms into tabledata array one by one
 			$.each(terms, function(i, term){
                 var termdata = parseTerm(term);
 				tabledata.push(termdata);
 			});			
 		    
 			//pass tabledata to appropriate table 
-			var tableelem='#'+tableID;
-			$(tableelem).bootstrapTable({
-				data: tabledata
-			});
+			var tableelement='#'+tableID;
+            $(tableelement).bootstrapTable('load',tabledata);
+
+            //if there's another page of JSON defined as 'next' in the json response then call this handleJSON function again.
+            //keeps looping till there is not 'next' value (i.e. the last JSON page has been reached).
+            if (vocabjson.result.next){
+                var nextURL=vocabjson.result.next;
+                handleJSON(nextURL, tableID, tabledata);
+                }
+            
 		});
-		
-	});
     
-}); //end getJSON 
-		
-}); //end function
+};
 
 
 
@@ -68,6 +88,9 @@ function createTable(tableID, tableTitle) {
     var tab = document.createElement("table");
     tab.id=tabID;
     tab.class="table table-bordered";
+    //table ordered by label
+    tab.setAttribute("data-sort-name", "label");
+    tab.setAttribute("data-sort-order", "asc");
     document.getElementById("vocab-div").appendChild(tab);
     
     var th=document.createElement('thead');
@@ -82,7 +105,6 @@ function createTable(tableID, tableTitle) {
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "label");
-    header.innerHTML ="Label";
     document.getElementById(trid).appendChild(header);
     
     var header = document.createElement("th");
