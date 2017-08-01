@@ -96,6 +96,7 @@ function createTable(tableID, tableTitle) {
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "uri");
+    header.setAttribute("data-formatter","linkFormatter");
     header.innerHTML ="URI";
     document.getElementById(trid).appendChild(header);
     
@@ -115,4 +116,8 @@ function parseTerm(term){
         };
     return termdata
 };
+
+function linkFormatter(value, row, index) {
+  return "<a href='"+value+"'>"+value+"</a>";
+}
 
