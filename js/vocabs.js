@@ -1,26 +1,3 @@
-var data = [
-    {
-        "value": "active",
-        "label": "The site is active.",
-        "description": "The site is active",
-        "exactMatch": "",
-        "uri": "http://neii.gov.au/vocabularies/nemsr/siteStatus/active"
-    },
-    {
-        "value": "inactive",
-        "label": "The site is inactive.",
-        "description": "The site is inactive",
-        "exactMatch": "",
-        "uri": "http://neii.gov.au/vocabularies/nemsr/siteStatus/inactive"
-    },
-    {
-        "value": "decommissioned",
-        "label": "The site has been decommissioned.",
-        "description": "The site has been decommissioned",
-        "exactMatch": "",
-        "uri": "http://neii.gov.au/vocabularies/nemsr/siteStatus/decommissioned"
-    }
-];
 
 $(function () {
     $.getJSON("vocabconfig.json",function(vocabconfig) {
