@@ -82,6 +82,7 @@ function createTable(tableID, tableTitle) {
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "label");
+    header.innerHTML = "Label"; 
     document.getElementById(trid).appendChild(header);
     
     var header = document.createElement("th");
