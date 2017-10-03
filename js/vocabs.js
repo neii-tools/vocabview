@@ -44,7 +44,9 @@ function handleJSON(jsonurl,tableID,tabledata){
             //keeps looping till there is not 'next' value (i.e. the last JSON page has been reached).
             if (vocabjson.result.next){
                 var nextURL=vocabjson.result.next;
-                handleJSON(nextURL, tableID, tabledata);
+		//need to use an https url for github pages    
+		var nextURLSecure = nextURL.replace("http://", "https://");   
+                handleJSON(nextURLSecure, tableID, tabledata);
                 }
             
 		});
