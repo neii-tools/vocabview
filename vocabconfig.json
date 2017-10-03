@@ -10,7 +10,7 @@
     ["Site Status","https://uat.cloud.neii.gov.au/neii/neii-site-status/latest/concept.json?&_view=description"],
     ["SRS Name (Spatial Reference Systems)","https://uat.cloud.neii.gov.au/neii/neii-srs-name/latest/concept.json?&_view=description"],
     ["Observed Property","https://uat.cloud.neii.gov.au/neii/neii-observed-property/latest/concept.json?&_view=description"],
-    ["AODN Platform Vocabulary","http://uat.cloud.neii.gov.au/neii/aodn-platform-vocabulary/latest/concept.json?&_view=description"]  
+    ["AODN Platform Vocabulary","https://uat.cloud.neii.gov.au/neii/aodn-platform-vocabulary/latest/concept.json?&_view=description"]  
     ]
 }
       
