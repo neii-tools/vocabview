@@ -32,7 +32,7 @@ function handleJSON(jsonurl,tableID,tabledata){
 			var terms = vocabjson.result.items;
 			//parse the individual terms into tabledata array one by one
 			$.each(terms, function(i, term){
-                var termdata = parseTerm(term);
+                                var termdata = parseTerm(term);
 				tabledata.push(termdata);
 			});			
 		    
