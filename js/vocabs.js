@@ -84,18 +84,21 @@ function createTable(tableID, tableTitle) {
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "label");
-    header.innerHTML = "Label"; 
+    header.innerHTML = "Term"; 
     document.getElementById(trid).appendChild(header);
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "description");
-    header.innerHTML ="Description";
+    header.innerHTML ="Definition";
     document.getElementById(trid).appendChild(header);
     
+    /*  commenting out ExactMatch column as wasn't being used.
     var header = document.createElement("th");
     header.setAttribute("data-field", "exactMatch");
     header.innerHTML ="Exact Match";
     document.getElementById(trid).appendChild(header);
+    */
+
     
     var header = document.createElement("th");
     header.setAttribute("data-field", "uri");
