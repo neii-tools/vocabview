@@ -9,7 +9,7 @@
 <p><a href="http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture">http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture</a></p>
 
 <h2>JSON endpoint to call: </h2>
-<p><a href="http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture">http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture</a></p>
+<p><a href="https://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture">http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture</a></p>
 
 
 <h2>Results from JQuery getJSON request. View source of this page to see the request being made in JQuery.</h2>
@@ -21,7 +21,7 @@
 This object returned is called 'json'. Its object model is a representation of the JSON content that was parsed. The best way to understand the object model is therefore to study the JSON file.
 Here we simply append various JSON properties to the html document. This output could be targetted to any suitable html element e.g. populating a table in a particular div -->
 <script>
-$.getJSON( "http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture", function( json ) {
+$.getJSON( "https://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture", function( json ) {
   document.body.innerHTML = document.body.innerHTML + "<h3>Vocab Term</h3>";
   document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic._about + "</p>";
   
