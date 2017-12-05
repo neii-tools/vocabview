@@ -1,16 +1,16 @@
 {  
    "vocabs":[
-    ["Network ID","https://uat.cloud.neii.gov.au/neii/neii-network-id/latest/concept.json?&_view=description"],
-    ["Data Provider","https://uat.cloud.neii.gov.au/neii/neii-data-provider/latest/concept.json?&_view=description"],
+    ["Network ID","https://cloud.neii.gov.au/neii/neii-network-id/latest/concept.json?&_view=description"],
+    ["Data Provider","https://cloud.neii.gov.au/neii/neii-data-provider/latest/concept.json?&_view=description"],
     ["Data Availability","https://cloud.neii.gov.au/neii/neii-data-availability/latest/concept.json?&_view=description"],  
-    ["Environmental Theme","https://uat.cloud.neii.gov.au/neii/neii-environmental-theme/latest/concept.json?&_view=description"],
-    ["Licensing","https://uat.cloud.neii.gov.au/neii/neii-licencing/latest/concept.json?&_view=description"],  
-    ["Observation Method","https://uat.cloud.neii.gov.au/neii/neii-observation-method/latest/concept.json?&_view=description"],
-    ["Sampling Regime","https://uat.cloud.neii.gov.au/neii/neii-sampling-regime/latest/concept.json?&_view=description"],
-    ["Site Status","https://uat.cloud.neii.gov.au/neii/neii-site-status/latest/concept.json?&_view=description"],
-    ["SRS Name (Spatial Reference Systems)","https://uat.cloud.neii.gov.au/neii/neii-srs-name/latest/concept.json?&_view=description"],
-    ["Observed Property","https://uat.cloud.neii.gov.au/neii/neii-observed-property/latest/concept.json?&_view=description"],
-    ["AODN Platform Vocabulary","https://uat.cloud.neii.gov.au/neii/aodn-platform-vocabulary/latest/concept.json?&_view=description"]  
+    ["Environmental Theme","https://cloud.neii.gov.au/neii/neii-environmental-theme/latest/concept.json?&_view=description"],
+    ["Licensing","https://cloud.neii.gov.au/neii/neii-licencing/latest/concept.json?&_view=description"],  
+    ["Observation Method","https://cloud.neii.gov.au/neii/neii-observation-method/latest/concept.json?&_view=description"],
+    ["Sampling Regime","https://cloud.neii.gov.au/neii/neii-sampling-regime/latest/concept.json?&_view=description"],
+    ["Site Status","https://cloud.neii.gov.au/neii/neii-site-status/latest/concept.json?&_view=description"],
+    ["SRS Name (Spatial Reference Systems)","https://cloud.neii.gov.au/neii/neii-srs-name/latest/concept.json?&_view=description"],
+    ["Observed Property","https://cloud.neii.gov.au/neii/neii-observed-property/latest/concept.json?&_view=description"],
+    ["AODN Platform Vocabulary","https://cloud.neii.gov.au/neii/aodn-platform-vocabulary/latest/concept.json?&_view=description"]  
     ]
 }
       
