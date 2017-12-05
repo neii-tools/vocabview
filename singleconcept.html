@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Single Concept Retrieval</title>
+ </head>
+ <body>
+<h1>Retrieving a single concept from the Vocab Service</h1>
+<h2>Concept to retrieve: </h2>
+<p><a href="http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture">http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture</a></p>
+
+<h2>JSON endpoint to call: </h2>
+<p><a href="http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture">http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture</a></p>
+
+
+<h2>Results from JQuery getJSON request. View source of this page to see the request being made in JQuery.</h2>
+
+<!-- Import JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Call the JQuery getJSON function (getJSON is an ansynchronous (AJAX) convenience function in JQuery that returns a javascript object representing the json.
+This object returned is called 'json'. Its object model is a representation of the JSON content that was parsed. The best way to understand the object model is therefore to study the JSON file.
+Here we simply append various JSON properties to the html document. This output could be targetted to any suitable html element e.g. populating a table in a particular div -->
+<script>
+$.getJSON( "http://cloud.neii.gov.au/neii/australian-landscape-water-balance/latest/resource.json?uri=http://www.neii.gov.au/def/voc/AWRA/australian-landscape-water-balance/Deep-soil-moisture", function( json ) {
+  document.body.innerHTML = document.body.innerHTML + "<h3>Vocab Term</h3>";
+  document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic._about + "</p>";
+  
+  document.body.innerHTML = document.body.innerHTML + "<h3>Preferred Label</h3>";
+  document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic.prefLabel._value + "</p>";
+  
+  document.body.innerHTML = document.body.innerHTML + "<h3>Definition</h3>";
+  document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic.definition + "</p>";
+  
+  document.body.innerHTML = document.body.innerHTML + "<h3>References</h3>";
+  document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic.references + "</p>";
+  
+  document.body.innerHTML = document.body.innerHTML + "<h3>Created</h3>";
+  document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic.created + "</p>";
+  
+  document.body.innerHTML = document.body.innerHTML + "<h3>Modified</h3>";
+  document.body.innerHTML = document.body.innerHTML + "<p>" +  json.result.primaryTopic.modified + "</p>";
+ });
+</script>
+
+
+</body></html>
